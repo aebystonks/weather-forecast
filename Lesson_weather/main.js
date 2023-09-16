@@ -1,9 +1,9 @@
 const weatherForm = document.querySelector('.weather__form')
 export const weatherInput = weatherForm.querySelector('.weather__input')
-const forecastCards = document.querySelector('.forecast__cards')
-const temperature = document.querySelectorAll('.forecast__temperature')
+const forecastCards = document.querySelectorAll('.forecast__card')
 
 import { forecastFetch } from '../modules/forecast-data.js'
+import { splitForecast } from '../modules/forecast.js'
 import { weatherFetch } from '../modules/weather-data.js'
 import { splitDetails } from '../modules/weather-forecast.js'
 import { splitFunction } from '../modules/weather-now.js'
@@ -30,8 +30,8 @@ weatherForm.addEventListener('submit', async event => {
 			weatherData.sys.sunset
 		)
 		for (let i = 0; i < forecastCards.length; i++) {
-			temperature[i].textContent = forecastCards.list[i].main.temp
-		} //температура не мменяется
+			splitForecast(i, forecastData.list[i].main.temp, forecastData.list[i].dt)
+		}
 
 		weatherInput.value = ''
 		console.log(weatherData)
