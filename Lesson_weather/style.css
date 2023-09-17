@@ -31,6 +31,10 @@ section {
 	transition: all 300ms;
 }
 
+.forecast__temperature {
+	width: 160px;
+}
+
 body {
 	line-height: 1;
 	-ms-text-size-adjust: 100%;

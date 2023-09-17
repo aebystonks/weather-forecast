@@ -1,8 +1,6 @@
-import { weatherInput } from '../Lesson_weather/main.js'
-
-export async function weatherFetch() {
+export async function weatherFetch(city) {
 	const serverUrl = 'http://api.openweathermap.org/data/2.5/weather'
-	const cityName = weatherInput.value
+	const cityName = city
 	const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f'
 	const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`
 

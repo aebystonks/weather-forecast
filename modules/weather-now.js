@@ -1,5 +1,5 @@
 const temperature = document.querySelector('.now__temperature')
-const currentCityName = document.querySelector('.now__city')
+export const currentCityName = document.querySelector('.now__city')
 const weatherIcon = document.querySelector('.now__img')
 
 export function splitFunction(temp, city, icon) {
